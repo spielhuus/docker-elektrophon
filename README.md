@@ -7,31 +7,31 @@ Docker build image for elekrophon
 ## download the docker image from dockerhub
 
 ```
-docker pull spielhuus/elektrophon
+docker pull ghcr.io/spielhuus/docker-elektrophon:main
 ```
 
 ## generate the pages
 
 ```
-docker run -v {PATH TO CONTENT}:/github/workspace -ti --rm spielhuus/elektrophon build
+docker run -v {PATH TO CONTENT}:/github/workspace -ti --rm ghcr.io/spielhuus/docker-elektrophon:main build
 ```
 
 ## serve the blog locally
 
 ```
-docker run -v {PATH TO CONTENT}:/github/workspace -p 1313:1313 -ti --rm spielhuus/elektrophon serve
+docker run -v {PATH TO CONTENT}:/github/workspace -p 1313:1313 -ti --rm ghcr.io/spielhuus/docker-elektrophon:main serve
 ```
 
 ## clean the local repository
 
 ```
-docker run -v {PATH TO CONTENT}:/github/workspace -ti --rm spielhuus/elektrophon clean
+docker run -v {PATH TO CONTENT}:/github/workspace -ti --rm ghcr.io/spielhuus/docker-elektrophon:main clean
 ```
 
 ## run jupyterlab
 
 ```
-docker run -v {PATH TO CONTENT}:/github/workspace -p 8888:8888 -ti --rm spielhuus/elektrophon notebook
+docker run -v {PATH TO CONTENT}:/github/workspace -p 8888:8888 -ti --rm ghcr.io/spielhuus/docker-elektrophon:main notebook
 ```
 
 ## Credits:
