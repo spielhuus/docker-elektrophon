@@ -3,7 +3,7 @@ FROM ghcr.io/spielhuus/docker-kicad-ci:main
 ENV DEBIAN_FRONTEND noninteractive
 
 ENV WORKSPACE="/github/workspace"
-ENV WWW_DIR="/github/workspace/hugo"
+ENV WWW_DIR="/github/workspace/www"
 
 RUN apt-get update && apt-get upgrade -y &&\
     apt-get install -y build-essential unzip wget python3 python3-pip python3-dev \
