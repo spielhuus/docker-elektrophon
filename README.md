@@ -1,6 +1,3 @@
-[![Build Status](https://img.shields.io/docker/cloud/build/spielhuus/elektrophon)](https://hub.docker.com/repository/docker/spielhuus/elektrophon)
-[![GitHub version](https://img.shields.io/docker/pulls/spielhuus/elektrophon.svg)](https://hub.docker.com/repository/docker/spielhuus/elektrophon)
-
 # docker-elektrophon
 Docker build image for elekrophon
 
@@ -33,6 +30,18 @@ docker run -v {PATH TO CONTENT}:/github/workspace -ti --rm ghcr.io/spielhuus/doc
 ```
 docker run -v {PATH TO CONTENT}:/github/workspace -p 8888:8888 -ti --rm ghcr.io/spielhuus/docker-elektrophon:main notebook
 ```
+
+## run kicad inside the container
+
+```
+docker run -v {PATH TO CONTENT}:/github/workspace \
+           -v /tmp/.X11-unix:/tmp/.X11-unix \
+           --network host \
+           -e DISPLAY=$DISPLAY \
+           -e COOKIE="`xauth list`" \
+           -ti elektrophon kicad
+```
+
 
 ## Credits:
 

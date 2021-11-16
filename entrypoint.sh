@@ -16,4 +16,4 @@ function create_user()
 create_user
 
 # Execute the rest of the script with the new user
-su -c "/entrypoint-user.sh \"$@\"" $USERNAME
+su $USERNAME -- /entrypoint-user.sh "$@"

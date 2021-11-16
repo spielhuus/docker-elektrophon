@@ -5,7 +5,11 @@ IP=`awk 'END{print $1}' /etc/hosts`
 
 cd $WORKSPACE
 
-case "$@" in
+first_arg="$1"
+shift
+echo "$@"
+
+case $first_arg in
     serve)
         scons
         cd $WWW_DIR
@@ -24,6 +28,10 @@ case "$@" in
         scons -c
         ;;
     *)
-        $@
+        if [ -n "$COOKIE" ]; then
+            export DISPLAY=$DISPLAY
+            xauth add $COOKIE
+        fi
+        $first_arg $@
         ;;
 esac
