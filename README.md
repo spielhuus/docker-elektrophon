@@ -10,25 +10,35 @@ docker pull ghcr.io/spielhuus/docker-elektrophon:main
 ## generate the pages
 
 ```
-docker run -v {PATH TO CONTENT}:/github/workspace -ti --rm ghcr.io/spielhuus/docker-elektrophon:main build
+docker run -v {PATH TO CONTENT}:/github/workspace \
+           -ti --rm ghcr.io/spielhuus/docker-elektrophon:main \
+           build
 ```
 
 ## serve the blog locally
 
 ```
-docker run -v {PATH TO CONTENT}:/github/workspace -p 1313:1313 -ti --rm ghcr.io/spielhuus/docker-elektrophon:main serve
+docker run -v {PATH TO CONTENT}:/github/workspace \
+           -p 1313:1313 -ti --rm \
+           ghcr.io/spielhuus/docker-elektrophon:main \
+           serve
 ```
 
 ## clean the local repository
 
 ```
-docker run -v {PATH TO CONTENT}:/github/workspace -ti --rm ghcr.io/spielhuus/docker-elektrophon:main clean
+docker run -v {PATH TO CONTENT}:/github/workspace \
+           -ti --rm ghcr.io/spielhuus/docker-elektrophon:main \
+           clean
 ```
 
 ## run jupyterlab
 
 ```
-docker run -v {PATH TO CONTENT}:/github/workspace -p 8888:8888 -ti --rm ghcr.io/spielhuus/docker-elektrophon:main notebook
+docker run -v {PATH TO CONTENT}:/github/workspace \
+           -p 8888:8888 -ti --rm \
+           ghcr.io/spielhuus/docker-elektrophon:main \
+           notebook
 ```
 
 ## run kicad inside the container
@@ -39,9 +49,9 @@ docker run -v {PATH TO CONTENT}:/github/workspace \
            --network host \
            -e DISPLAY=$DISPLAY \
            -e COOKIE="`xauth list`" \
-           -ti elektrophon kicad
+           -ti ghcr.io/spielhuus/docker-elektrophon:main \
+           kicad
 ```
-
 
 ## Credits:
 
