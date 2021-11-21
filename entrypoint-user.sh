@@ -7,7 +7,6 @@ cd $WORKSPACE
 
 first_arg="$1"
 shift
-echo "$@"
 
 case $first_arg in
     serve)
