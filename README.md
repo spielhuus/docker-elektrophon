@@ -1,5 +1,5 @@
 # docker-elektrophon
-Docker build image for elekrophon
+Docker build image for elektrophon
 
 ## download the docker image from dockerhub
 
