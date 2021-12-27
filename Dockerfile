@@ -1,4 +1,4 @@
-FROM ghcr.io/spielhuus/docker-kicad-ci:main
+FROM ghcr.io/spielhuus/docker-kicad-ci:v5.1.9
 
 ENV DEBIAN_FRONTEND noninteractive
 
